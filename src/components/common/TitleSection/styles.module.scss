@@ -1,0 +1,17 @@
+@import "../../../styles/colors.scss";
+
+.titleSection {
+    text-align: center;
+    padding: 8em 0 2em 0;
+    
+    h2{
+        color: $text;
+        text-transform: uppercase;
+        margin-bottom: .1em;
+    }
+
+    p {
+        color: rgba($color: $text, $alpha: .5);
+        font-weight: bold;
+    }
+}

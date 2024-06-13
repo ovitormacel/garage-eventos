@@ -6,7 +6,11 @@ import "@splidejs/splide/dist/css/splide.min.css";
 const MainSlider = () => {
     return (
         <>
-            <Splide aria-label="Eventos em Destaque">
+            <Splide options={{
+                type: "loop",
+                perMove: 1,
+                speed: 500,
+            }} aria-label="Eventos em Destaque">
                 <SplideSlide>
                     <SlideCard image="/banda-teste.jpg" title="Brothers Rush"/>
                 </SplideSlide>
