@@ -1,0 +1,97 @@
+@import "../../../styles/colors.scss";
+
+.events {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+}
+
+.listEvents {
+    width: 47.5%;
+    list-style: none;
+
+    .eventCard {
+        opacity: .5;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        justify-content: space-between;
+        padding: 1em 0;
+        border-bottom: 2px solid $backgroundElements;
+        transition: .2s;
+
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .col1 {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .date {
+            border: 2px solid $primary;
+            width: 6em;
+            height: 6em;
+            border-radius: 3em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .day {
+                font-size: 2.5em;
+                font-weight: bold;
+                color: $text;
+            }
+
+            .month {
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $text;
+            }
+        }
+
+        .infos {
+            h3 {
+                color: $text;
+                font-size: 1.5em;
+                margin-bottom: .2em;
+            }
+
+            .infosTitleDate {
+                display: flex;
+                color: rgba($color: $text, $alpha: .6);
+                gap: 2em;
+            }
+        }
+
+        .infosButton {
+            font-size: 1em;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $text;
+            text-decoration: none;
+            padding: .8em 1.5em;
+            border: 2px solid $primary;
+            border-radius: .3em;
+            transition: .3s;
+
+            &:hover {
+                background-color: $primary;
+                box-shadow: .5em .5em 0 0 $secondary;
+            }
+            
+        }
+    }
+}
+
+.eventImage{
+    width: 47.5%;
+    img{
+        width: 100px;
+    }
+}
