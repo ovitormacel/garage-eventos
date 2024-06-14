@@ -5,10 +5,11 @@
     flex-direction: row;
     align-items: center;
     gap: 5%;
+    margin-bottom: 10em;
 }
 
 .listEvents {
-    width: 47.5%;
+    width: 57.5%;
     list-style: none;
 
     .eventCard {
@@ -90,8 +91,14 @@
 }
 
 .eventImage{
-    width: 47.5%;
+    width: 37.5%;
+    height: 30em;
+    overflow: hidden;
+    border: 5px solid $primary;
+    box-sizing: border-box;
+    box-shadow: 1em 1em 0 0 $secondary;
+
     img{
-        width: 100px;
+        height: 100%;
     }
 }
