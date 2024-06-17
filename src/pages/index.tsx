@@ -1,5 +1,6 @@
 
 
+import AboutSection from "@/components/Home/AboutSection";
 import EventsSection from "@/components/Home/EventsSection";
 import Header from "@/components/Home/Header";
 import MainSlider from "@/components/Home/MainSlider";
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <Header />
         <MainSlider />
         <EventsSection />
+        <AboutSection />
       </main>
     </>
   )

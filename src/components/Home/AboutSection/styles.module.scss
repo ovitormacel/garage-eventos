@@ -1,0 +1,88 @@
+@import "../../../styles/colors.scss";
+
+.about {
+    display: flex;
+}
+
+.aboutImage {
+    width: 48%;
+    height: 30em;
+    background-image: url("/palco.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: $primary, $alpha: .5);
+    }
+}
+
+.aboutInfos {
+    width: 52%;
+    height: 30em;
+    background-image: url("/dj.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-sizing: border-box;
+    border-left: 3em solid $primary;
+
+    .aboutInfosInfos {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: $backgroundElements, $alpha: .9);
+        padding: 2.5em 1.5em;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prefix {
+        color: $primary;
+        font-weight: bold;
+        font-size: .9em;
+    }
+
+    .title {
+        color: $text;
+        text-transform: uppercase;
+        font-size: 2em;
+        margin-top: .1em;
+    }
+
+    .separator {
+        background-color: $text;
+        width: 40%;
+        height: 2px;
+        display: block;
+        margin: 1.5em 0;
+    }
+
+    .textInfo {
+        color: rgba($color: $text, $alpha: .6);
+        line-height: 1.5em;
+    }
+
+    .linkInfo {
+        text-decoration: none;
+        color: $text;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        padding: .8em 1.5em;
+        border-radius: .3em;
+        background: linear-gradient(to right, #DF2935, #DF294A);;
+        box-shadow: .2em .2em 0 0 $secondary;
+        display: inline-block;
+        margin-top: 3em;
+        align-self: flex-end;
+    }
+}
