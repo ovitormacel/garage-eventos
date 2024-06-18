@@ -1,0 +1,45 @@
+@import "../../../styles/colors.scss";
+
+.infoCard {
+    background-color: $backgroundElements;
+    height: 18em;
+    width: 20%;
+    padding-bottom: 0em;
+    box-sizing: border-box;
+    border-radius: .5em;
+    margin-top: 2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    transition: .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-2em);
+    }
+
+    .infoIcon {
+        background-color: $background;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 2.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $backgroundElements;
+        font-size: 2.5em;
+    }
+
+    .infoTitle {
+        font-size: 1.5em;
+        color: $text;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 1em;
+    }
+}
