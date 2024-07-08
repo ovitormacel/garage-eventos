@@ -1,0 +1,135 @@
+@import "../../../styles/colors.scss";
+
+.columns {
+    display: flex;
+    gap: 2em;
+}
+
+.contactForm {
+    background-image: url(/dj.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3em 1.5em;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 50%;
+    border-left: 2.5em solid $primary;
+    
+
+    ::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        left: 0;
+        background-color: rgba($color: $backgroundElements, $alpha: .25);
+    }
+    
+    .formContent {
+        z-index: 3;
+        
+        .formTitle {
+            color: $text;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+        }
+
+        .formColumns {
+            display: flex;
+            gap: 2em;
+        }
+
+        label {
+            display: none;
+        }
+
+        .formInput {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid rgba($color: $text, $alpha: .8);
+        
+            font-size: 1.1em;
+            padding: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            color: $text;
+            outline: none;
+
+            resize: none;
+        }
+    
+        .submitDiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2em;
+
+            .submitWarning {
+                color: rgba($color: $text, $alpha: .5);
+                
+                a {
+                    color: $text;
+                    text-decoration: none;
+                }
+            }
+
+            .formBtnSubmit {
+                font-size: 1.2em;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: .8em 1.2em;
+                background-color: $primary;
+                color: $text;
+                border: none;
+                border-radius: .3em;
+                box-shadow: .2em .2em 0 0 $secondary;
+                transition: .2s;
+                cursor: pointer;
+
+                :hover {
+                    box-shadow: 1em 1em 0 0 $secondary;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.locationCol {
+    width: 50%;
+    height: 25em;
+    height: 2em;
+    position: relative;
+
+    .maps {
+        border: 0;
+        height: 25em;
+        width: 100%;
+    }
+
+    .locationInfos {
+        background-color: $primary;
+        position: absolute;
+        top: 21em;
+        right: 0;
+        width: 80%;
+        padding: 1em;
+        color: $text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5em;
+        box-shadow: .5em .5em 0 0 $secondary;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: .5em;
+            font-weight: bold;
+        }
+    }
+}
