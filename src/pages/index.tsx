@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 
 import AboutSection from "@/components/Home/AboutSection";
 import ContactSection from "@/components/Home/ContactSection";
@@ -8,10 +8,16 @@ import Header from "@/components/Home/Header";
 import InfosSection from "@/components/Home/InfosSection";
 import MainSlider from "@/components/Home/MainSlider";
 import Timer from "@/components/Home/Timer";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import { Event } from "./api/getAllNextEvents";
 
-const Home: NextPage = () => {
+interface props {
+  events: Event[]
+}
+
+const Home: NextPage = ({events}: props) => {
+
   return (
     <>
       <Head>
@@ -22,7 +28,7 @@ const Home: NextPage = () => {
 
       <main>
         <Header />
-        <MainSlider />
+        <MainSlider eventsList={events}/>
         <Timer />
         <EventsSection />
         <AboutSection />
@@ -32,6 +38,22 @@ const Home: NextPage = () => {
       </main>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  let events;
+
+  try {
+    events = await fetch("http://localhost:3000/api/getAllNextEvents").then(res => res.json());
+  } catch (error) {
+    events = {}
+  }
+
+  return {
+    props: {
+      events
+    }
+  }
 }
 
 export default Home;
