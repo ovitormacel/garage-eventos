@@ -1,0 +1,99 @@
+@import "../../../styles/colors.scss";
+
+.footer{
+    background-color: $backgroundElements;
+    margin-top: 8em;
+    padding: 3em;
+    
+    .footerDivision {
+        display: flex;
+        justify-content: space-between;
+        
+
+        .footerContent {
+            display: flex;
+            gap: 5em;
+
+            .logoAndAddress {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 15em;
+                
+                .logo {
+                    width: 10em;
+                    margin-bottom: 2em;
+                }
+                .address {
+                    color: rgba($color: $text, $alpha: .3);
+                }
+            }
+
+            .navFooter {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: rgba($color: $text, $alpha: .3);
+                    transition: .3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $text;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+    .socialContent {
+        display: flex;
+        gap: 1em;
+    }
+
+    .socialItem {
+        background-color: $primary;
+        font-size: 2.2em;
+        width: 1.3em;
+        height: 1.3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .2em;
+        box-shadow: .1em .1em 0 0 $secondary;
+        color: $backgroundElements;
+        transition: .3s;
+
+        &:hover {
+            box-shadow: .2em .2em 0 0 $secondary;
+        }
+    }
+
+    .developer {
+        color: rgba($color: $text, $alpha: .3);
+
+        a {
+            text-decoration: none;
+            color: rgba($color: $primary, $alpha: .8);
+            transition: .3s;
+
+            &:hover {
+                color: rgba($color: $primary, $alpha: 1);
+
+            }
+        }
+    }
+}

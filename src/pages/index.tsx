@@ -3,9 +3,11 @@
 import AboutSection from "@/components/Home/AboutSection";
 import ContactSection from "@/components/Home/ContactSection";
 import EventsSection from "@/components/Home/EventsSection";
+import Footer from "@/components/Home/Footer";
 import Header from "@/components/Home/Header";
 import InfosSection from "@/components/Home/InfosSection";
 import MainSlider from "@/components/Home/MainSlider";
+import Timer from "@/components/Home/Timer";
 import { NextPage } from "next";
 import Head from "next/head";
 
@@ -21,10 +23,12 @@ const Home: NextPage = () => {
       <main>
         <Header />
         <MainSlider />
+        <Timer />
         <EventsSection />
         <AboutSection />
         <InfosSection />
         <ContactSection />
+        <Footer />
       </main>
     </>
   )

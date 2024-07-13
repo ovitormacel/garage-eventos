@@ -1,0 +1,86 @@
+@import "../../../styles/colors.scss";
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 3em;
+
+    .timerTitle {
+        color: rgba($color: $text, $alpha: .5);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+
+        .eventTitle {
+            color: $text;
+        }
+    }
+
+    .timerClock {
+        display: flex;
+
+        .clockBox {
+            width: 5em;
+            height: 5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+            .clockBoxNumbers {
+                font-weight: bold;
+                font-size: 4em;
+                color: $primary;
+            }
+
+            .clockBoxText {
+                color: rgba($color: $text, $alpha: .5);
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: .9em;
+                margin-top: .3em;
+            }
+        }
+
+        .separator {
+            box-sizing: border-box;
+            height: 4em;
+            width: 4em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .8em;
+
+            .circle {
+                width: .6em;
+                height: .6em;
+                background-color: rgba($color: $text, $alpha: .5);
+                display: block;
+                border-radius: 1em;
+            }
+        }
+    }
+
+    .callToAction {
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $text;
+        background-color: $primary;
+        padding: 1em 1.9em;
+        border-radius: .3em;
+        box-shadow: .3em .3em 0 0 $secondary;
+        margin-top: 1em;
+        transition: .3s;
+
+        &:hover {
+            box-shadow: .5em .5em 0 0 $secondary;
+        }
+    }
+}
