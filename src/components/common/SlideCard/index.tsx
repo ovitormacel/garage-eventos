@@ -9,7 +9,6 @@ interface SlideProps {
 
 
 const SlideCard = ({image, title, date}: SlideProps) => {
-    console.log(date);
     const semana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
     return (
         <>

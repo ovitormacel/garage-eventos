@@ -29,11 +29,11 @@ const Home: NextPage = ({events}: props) => {
       <main>
         <Header />
         <MainSlider eventsList={events}/>
-        <Timer />
+        <Timer eventsList={events}/>
         <EventsSection />
         <AboutSection />
         <InfosSection />
-        <ContactSection />
+        {/*<ContactSection />*/}
         <Footer />
       </main>
     </>

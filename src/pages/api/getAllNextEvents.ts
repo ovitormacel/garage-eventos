@@ -87,8 +87,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Event[
             name: "CubaLibre",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             date: {
-                day: 15,
-                month: 9,
+                day: 20,
+                month: 6,
                 year: 2024,
                 hour: 21,
                 minutes: 0,
