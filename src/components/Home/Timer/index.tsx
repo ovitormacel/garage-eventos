@@ -30,19 +30,23 @@ const Timer = ({eventsList}: props) => {
         return recentEvent;
     }
 
-    const getDifference = () => {
-        if(mostRecentEvent != null) {
-            const event = mostRecentEvent;
-
-            const eventDate = new Date(event.date.year, event.date.month, event.date.day, event.date.hour, event.date.minutes);
-            const today = new Date(Date.now());
-
-            return (eventDate.getTime() - today.getTime());
-        }
-    }
+    
 
     const [mostRecentEvent, setMostRecentEvent] = useState(getMostRecentEvents());
-    const [differenceTime, setDifferenceTime] = useState(getDifference());
+    
+    const [days, setDays] = useState(0);
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+
+
+    // setInterval(() => {
+    //     let event = mostRecentEvent;
+
+    //     let eventDate = new Date(event.date.day, event.date.month, event.date.year, event.date.hour, event.date.minutes);
+    //     let today = new Date(Date.now());
+
+    //     setDays(((((eventDate.getTime() - today.getTime()) / 1000) / 60) / 24) / 30 )
+    // }, 60000);
 
     return (
         <>
@@ -53,7 +57,7 @@ const Timer = ({eventsList}: props) => {
                 
                     <div className={styles.timerClock}>
                         <div className={styles.clockBox}>
-                            <p className={styles.clockBoxNumbers}>{differenceTime ? Math.floor(((((differenceTime / 1000) / 60) / 60) / 24)) : ""}</p>
+                            <p className={styles.clockBoxNumbers}>{days}</p>
                             <p className={styles.clockBoxText}>Dias</p>
                         </div>
 
@@ -63,7 +67,7 @@ const Timer = ({eventsList}: props) => {
                         </div>
 
                         <div className={styles.clockBox}>
-                            <p className={styles.clockBoxNumbers}>{differenceTime ? Math.floor(((((differenceTime / 1000) / 60) / 60))) - 24 : ""}</p>
+                            <p className={styles.clockBoxNumbers}>{hours}</p>
                             <p className={styles.clockBoxText}>Horas</p>
                         </div>
 
@@ -73,7 +77,7 @@ const Timer = ({eventsList}: props) => {
                         </div>
 
                         <div className={styles.clockBox}>
-                            <p className={styles.clockBoxNumbers}>{differenceTime ? Math.floor(((differenceTime / 1000) / 60)) : ""}</p>
+                            <p className={styles.clockBoxNumbers}>{minutes}</p>
                             <p className={styles.clockBoxText}>Minutos</p>
                         </div>
                     </div>

@@ -30,10 +30,10 @@ const Home: NextPage = ({events}: props) => {
         <Header />
         <MainSlider eventsList={events}/>
         <Timer eventsList={events}/>
-        <EventsSection />
+        <EventsSection eventsList={events}/>
         <AboutSection />
         <InfosSection />
-        {/*<ContactSection />*/}
+        <ContactSection />
         <Footer />
       </main>
     </>

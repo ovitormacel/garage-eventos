@@ -1,20 +1,26 @@
 import Link from "next/link"
 import styles from "./styles.module.scss";
+import { Event } from "@/pages/api/getAllNextEvents";
 
-const EventsCard = () => {
+interface props {
+    event: Event
+}
+
+const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+const EventsCard = ({event}: props) => {
     return (
         <li className={styles.eventCard}>
             <div className={styles.col1}>
                 <div className={styles.date}>
-                    <p className={styles.day}>17</p>
-                    <p className={styles.month}>de Set.</p>
+                    <p className={styles.day}>{event.date.day}</p>
+                    <p className={styles.month}>de {meses[event.date.month].slice(0, 3)}.</p>
                 </div>
             
                 <div className={styles.infos}>
-                    <h3>BROTHERS RUSH</h3>
+                    <h3>{event.name}</h3>
                     <div className={styles.infosTitleDate}>
-                        <p className={styles.titleDate}>17 de Setembro de 2024</p>
-                        <p className={styles.titleHour}>21:00</p>
+                        <p className={styles.titleDate}>{event.date.day} de {meses[event.date.month]} de {event.date.year}</p>
+                        <p className={styles.titleHour}>{event.date.hour}:{event.date.minutes.toString().padStart(2, "0")}</p>
                     </div>  
                 </div>
             </div>
