@@ -59,8 +59,30 @@
             color: $text;
             outline: none;
 
+            appearance: none;
+
             resize: none;
         }
+
+        .customSelect {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+
+            .formSelect {
+                color: rgba($color: $text, $alpha: .5);
+            }
+
+            .customArrow {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: $primary;
+                font-size: 2em;
+                padding: .4em 0;
+            }
+        }
+
     
         .submitDiv {
             display: flex;
