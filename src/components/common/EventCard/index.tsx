@@ -25,7 +25,7 @@ const EventsCard = ({event}: props) => {
                 </div>
             </div>
             
-            <Link href="#" className={styles.infosButton}>Ver Mais</Link>
+            <Link href={`http://localhost:3000/events/${event.id}`} className={styles.infosButton}>Ver Mais</Link>
         </li>
     )
 }

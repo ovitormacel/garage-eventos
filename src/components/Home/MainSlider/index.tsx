@@ -17,7 +17,7 @@ const MainSlider = ({eventsList}) => {
                 <SplideTrack>
                     {eventsList.map(event => (
                         <SplideSlide key={event.id}>
-                            <SlideCard image={"/uploads/"+event.cover+".jpg"} title={event.name} date={new Date(event.date.year, event.date.month, event.date.day, event.date.hour, event.date.minutes)}/>
+                            <SlideCard id={event.id} image={"/uploads/"+event.cover+".jpg"} title={event.name} date={new Date(event.date.year, event.date.month, event.date.day, event.date.hour, event.date.minutes)}/>
                         </SplideSlide>
                     ))}
                 </SplideTrack>
