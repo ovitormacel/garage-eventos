@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AboutSection = () => {
     return (
-        <section>
+        <section id="about">
             <TitleSection title="Sobre a casa" subtitle="Conheça mais sobre nossa História e Estrutura" />
         
             <div className="container">

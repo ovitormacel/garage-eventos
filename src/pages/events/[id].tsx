@@ -16,9 +16,12 @@ import { useEffect, useState } from "react";
 
 const Event: NextPage = ({event}) => {
 
-    console.log(event)
-
     const [ticketsMenu, setTicketsMenu] = useState(false);
+
+    const [ticketComum, setTicketComum] = useState(0);
+    const [ticketMeia, setTicketMeia] = useState(0);
+
+    const [finishValue, setFinishValue] = useState(0);
 
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
@@ -28,6 +31,45 @@ const Event: NextPage = ({event}) => {
         } else {
             setTicketsMenu(false);
         }
+    };
+
+    const addTicket = (value, ticket) => {
+        if(ticket == 1){
+            const newQtde = ticketComum + 1;
+            setTicketComum(newQtde);
+
+        } else if(ticket == 2){
+            const newQtde = ticketMeia + 1;
+            setTicketMeia(newQtde);
+
+        }
+
+        let newValue = finishValue + value;
+        setFinishValue(newValue);
+
+        
+
+    }
+
+    const removeTicket = (value, ticket) => {
+        if(ticket == 1 && ticketComum > 0){
+            const newQtde = ticketComum - 1;
+            setTicketComum(newQtde);
+
+        } else if(ticket == 2 && ticketMeia > 0){
+            const newQtde = ticketMeia - 1;
+            setTicketMeia(newQtde);
+
+        }
+
+        let newValue = finishValue - value;
+        
+        if(newValue <= 0) {
+            setFinishValue(0);
+        } else {
+            setFinishValue(newValue);
+        }
+
     }
 
   return (
@@ -60,10 +102,11 @@ const Event: NextPage = ({event}) => {
                                     <p className={styles.ticketPrice}>R$ 60,00</p>
                                 </div>
 
+                                {/* COMUM = 1, MEIA = 2 */}
                                 <div className={styles.inputTicketQtde}>
-                                    <button><FaMinus /></button>
-                                    <p className={styles.qtde}>0</p>
-                                    <button><FaPlus /></button>
+                                    <button onClick={() => removeTicket(60, 1)}><FaMinus /></button>
+                                    <p className={styles.qtde}>{ticketComum}</p>
+                                    <button onClick={() => addTicket(60, 1)}><FaPlus /></button>
                                 </div>
                             </li>
 
@@ -74,9 +117,9 @@ const Event: NextPage = ({event}) => {
                                 </div>
 
                                 <div className={styles.inputTicketQtde}>
-                                    <button><FaMinus /></button>
-                                    <p className={styles.qtde}>0</p>
-                                    <button><FaPlus /></button>
+                                    <button onClick={() => removeTicket(30, 2)}><FaMinus /></button>
+                                    <p className={styles.qtde}>{ticketMeia}</p>
+                                    <button onClick={() => addTicket(30, 2)}><FaPlus /></button>
                                 </div>
                             </li>
                         </ul>
@@ -95,11 +138,11 @@ const Event: NextPage = ({event}) => {
 
             </div>
             
-            <div className={`${styles.finishBuy}`}>
+            <div className={`${styles.finishBuy} ${finishValue > 0 ? styles.active : ""}`}>
                 <div className={`${styles.infos} container`}>
                     <div className={styles.buyInfo}>
                         <p>Valor Total</p>
-                        <p className={styles.valueFinished}>R$ 120,00</p>
+                        <p className={styles.valueFinished}>{finishValue.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
                     </div>
 
                     <Link className={styles.buttonBuyTicket} href="#">Continuar <FaArrowRight /></Link>

@@ -4,15 +4,23 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import styles from "./styles.module.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useEffect, useRef } from 'react';
 
 const MainSlider = ({eventsList}) => {
+    let slide = 0;
+    const ref = useRef();
+
+    useEffect(() => {
+        setInterval(() => {
+            ref.current.splide.go('>');
+            slide += 1;
+        }, 5000);
+    }, []);
     
     return (
-        <>
-            <Splide hasTrack={false} options={{
-                speed: 300,
+        <div id='home'>
+            <Splide ref={ref} hasTrack={false} options={{
                 pagination: false,
-                waitForTransition: true,
             }}>
                 <SplideTrack>
                     {eventsList.map(event => (
@@ -27,7 +35,7 @@ const MainSlider = ({eventsList}) => {
                     <button className={`${styles.arrow} splide__arrow splide__arrow--next`}><FaAngleRight /></button>
                 </div>
             </Splide>
-        </>
+        </div>
     )
 }
 

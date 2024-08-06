@@ -5,7 +5,7 @@ import { FaClock, FaEnvelope, FaAngleDown } from "react-icons/fa";
 
 const ContactSection = () => {
     return (
-        <section>
+        <section id="contact">
             <TitleSection title="Contato" subtitle="Entre em Contato Conosco" />
         
             <div className="container">

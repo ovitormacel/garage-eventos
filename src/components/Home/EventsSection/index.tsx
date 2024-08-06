@@ -67,7 +67,7 @@ const EventsSection = ({eventsList}: props) => {
   }, [])
 
   return (
-      <section>
+      <section id="events">
         <TitleSection title="Programação" subtitle="O que vai rolar nas próximas semanas"/>
       
         <div className="container">
