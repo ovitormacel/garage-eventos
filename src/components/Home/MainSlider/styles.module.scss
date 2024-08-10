@@ -1,5 +1,11 @@
 @import "../../../styles/colors.scss";
 
+#home {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .arrow {
     opacity: .4;
     font-size: 1.2em;

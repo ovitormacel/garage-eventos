@@ -1,6 +1,7 @@
 import Link from "next/link"
 import styles from "./styles.module.scss";
 import { Event } from "@/pages/api/getAllNextEvents";
+import { FaEye } from "react-icons/fa6";
 
 interface props {
     event: Event
@@ -25,7 +26,7 @@ const EventsCard = ({event}: props) => {
                 </div>
             </div>
             
-            <Link href={`http://localhost:3000/events/${event.id}`} className={styles.infosButton}>Ver Mais</Link>
+            <Link href={`http://localhost:3000/events/${event.id}`} className={styles.infosButton}><span>Ver Mais</span> <FaEye className={styles.eye} /></Link>
         </li>
     )
 }

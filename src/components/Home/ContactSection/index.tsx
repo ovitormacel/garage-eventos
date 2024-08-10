@@ -54,7 +54,7 @@ const ContactSection = () => {
                     
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916261109483!2d2.291906375665578!3d48.85837007133214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sbr!4v1720464751204!5m2!1sen!2sbr" className={styles.maps} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                         <div className={styles.locationInfos}>
-                            <p><FaLocationDot style={{color: "black",  fontSize: "1.2em"}}/> Avenida Simsalabim, 999 - Alakazam | SP</p>
+                            <p><FaLocationDot style={{color: "black",  fontSize: "1.2em"}}/>Avenida Domingo Rodrigues, 149 - Oneda | SP</p>
                             <p><FaClock style={{color: "black",  fontSize: "1.2em"}}/> Segunda a Sábado - Das 21:00h às 04:00h</p>
                             <p><FaEnvelope style={{color: "black", fontSize: "1.2em"}}/>contato@agarageshow.com.br</p>
                         </div>

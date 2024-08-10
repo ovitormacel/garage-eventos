@@ -7,19 +7,11 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { useEffect, useRef } from 'react';
 
 const MainSlider = ({eventsList}) => {
-    let slide = 0;
-    const ref = useRef();
 
-    useEffect(() => {
-        setInterval(() => {
-            ref.current.splide.go('>');
-            slide += 1;
-        }, 5000);
-    }, []);
     
     return (
         <div id='home'>
-            <Splide ref={ref} hasTrack={false} options={{
+            <Splide hasTrack={false} options={{
                 pagination: false,
             }}>
                 <SplideTrack>

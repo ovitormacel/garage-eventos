@@ -10,14 +10,14 @@ const Footer = () => {
                     <div className={styles.footerContent}>
                         <div className={styles.logoAndAddress}>
                             <img className={styles.logo} src="/next.svg" alt="Logotipo Garage Eventos" />
-                            <p className={styles.address}>Avenida Sinsalabim, 999 - Alakazam | SP</p>
+                            <p className={styles.address}>Avenida Domingo Rodrigues, 149 - Oneda | SP</p>
                         </div>
                         
                         <ul className={styles.navFooter}>
-                            <li><Link href="#">Início</Link></li>
-                            <li><Link href="#">Programação</Link></li>
-                            <li><Link href="#">Sobre a Casa</Link></li>
-                            <li><Link href="#">Contato</Link></li>
+                            <li><Link href="http://localhost:3000/#home">Início</Link></li>
+                            <li><Link href="http://localhost:3000/#events">Programação</Link></li>
+                            <li><Link href="http://localhost:3000/#about">Sobre a Casa</Link></li>
+                            <li><Link href="http://localhost:3000/#contact">Contato</Link></li>
                         </ul>
                     </div>
 

@@ -7,7 +7,7 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
     position: relative;
 }
@@ -15,3 +15,15 @@
 body {
     background-color: $background;
 }
+
+// @media screen and (max-width: 768px) {
+//     .container {
+//         max-width: 668p;
+//     }
+// }
+
+// @media screen and (max-width: 480px) {
+//     .container {
+//         max-width: 360px;
+//     }
+// }

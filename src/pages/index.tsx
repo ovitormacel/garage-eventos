@@ -29,7 +29,6 @@ const Home: NextPage = ({events}: props) => {
       <main>
         <Header />
         <MainSlider eventsList={events}/>
-        <Timer eventsList={events}/>
         <EventsSection eventsList={events}/>
         <AboutSection />
         <InfosSection />

@@ -66,3 +66,43 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .slideImage{
+        height: 70vh;
+    }
+
+    .slideInfo {
+        bottom: 3em;
+
+        .eventTitle {
+            font-size: 3.5em;
+        }
+    
+        .slideLink {
+            font-size: 1.1em;
+            transition: .2s;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slideImage{
+        height: 70vh;
+    }
+
+    .slideInfo {
+        .date {
+            font-size: 1.5em;
+        }
+    
+        .eventTitle {
+            font-size: 3em;
+        }
+    
+        .slideLink {
+            font-size: 1em;
+            transition: .2s;
+        }
+    }
+}

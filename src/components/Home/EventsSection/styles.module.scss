@@ -89,3 +89,14 @@
         color: $text;
     }
 }
+
+@media screen and (max-width: 768px) {
+    
+    .listEvents {
+        width: 100%;
+    }
+    
+    .eventImage{
+        display: none;
+    }
+}
