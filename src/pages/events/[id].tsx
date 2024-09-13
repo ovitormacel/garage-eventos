@@ -52,22 +52,27 @@ const Event: NextPage = ({event}) => {
     }
 
     const removeTicket = (value, ticket) => {
+        let newValue;
+        
         if(ticket == 1 && ticketComum > 0){
             const newQtde = ticketComum - 1;
             setTicketComum(newQtde);
+            newValue = finishValue - value;
 
         } else if(ticket == 2 && ticketMeia > 0){
             const newQtde = ticketMeia - 1;
             setTicketMeia(newQtde);
+            newValue = finishValue - value;
 
         }
 
-        let newValue = finishValue - value;
         
-        if(newValue <= 0) {
+        if(newValue && newValue <= 0) {
             setFinishValue(0);
-        } else {
+        } else if (newValue) {
             setFinishValue(newValue);
+        } else if (ticketComum <= 0 && ticketMeia <= 0) {
+            setFinishValue(0);
         }
 
     }

@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let events;
 
   try {
-    events = await fetch("http://localhost:3000/api/getAllNextEvents").then(res => res.json());
+    events = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/getAllNextEvents").then(res => res.json());
   } catch (error) {
     events = {}
   }

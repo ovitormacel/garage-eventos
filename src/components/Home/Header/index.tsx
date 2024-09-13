@@ -36,12 +36,12 @@ const Header = () => {
         <>
             <header className={`${styles.header} ${scrollPosition >= 615 ? styles.active : ""}`}>
                 <div className={`container ${styles.containerHeader}`}>
-                     <Link href="http://localhost:3000/"><img src="/next.svg" alt="Logotipo Garage" className={styles.logotipo}/></Link>
+                     <Link href="/"><img src="/next.svg" alt="Logotipo Garage" className={styles.logotipo}/></Link>
                      <nav className={`${styles.navbar} ${menuOpen ? styles.active : ""}`}>
-                        <Link href="http://localhost:3000/#home" className={styles.navItem}>Inicio</Link>
-                        <Link href="http://localhost:3000/#events" className={styles.navItem}>Programação</Link>
-                        <Link href="http://localhost:3000/#about" className={styles.navItem}>Sobre a Casa</Link>
-                        <Link href="http://localhost:3000/#contact" className={styles.navItem}>Contato</Link>
+                        <Link href="/#home" className={styles.navItem}>Inicio</Link>
+                        <Link href="/#events" className={styles.navItem}>Programação</Link>
+                        <Link href="/#about" className={styles.navItem}>Sobre a Casa</Link>
+                        <Link href="/#contact" className={styles.navItem}>Contato</Link>
                      </nav>
                      <div className={styles.social}>
                         <Link href="#" className={styles.socialItem}><FaInstagram /></Link>
