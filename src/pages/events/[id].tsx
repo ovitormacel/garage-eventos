@@ -14,8 +14,24 @@ import Footer from "@/components/Home/Footer";
 import { useEffect, useState } from "react";
 
 
-const Event: NextPage = ({event}) => {
+const Event: NextPage = () => {
 
+    let event = {
+        id: 5,
+        name: "CubaLibre",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        date: {
+            day: 20,
+            month: 6,
+            year: 2024,
+            hour: 21,
+            minutes: 0,
+        },
+        classification: 18,
+        ticketPrice: 119,
+        cover: "cubaLibre_back"
+    }
+    
     const [ticketsMenu, setTicketsMenu] = useState(false);
 
     const [ticketComum, setTicketComum] = useState(0);
@@ -158,22 +174,22 @@ const Event: NextPage = ({event}) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+// export const getServerSideProps: GetServerSideProps = async (context) => {
     
-    const {id} = context.query;
-    let event;
+//     const {id} = context.query;
+//     let event;
   
-    try {
-        event = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`).then(res => res.json());
-    } catch (error) {
-        event = {}
-    }
+//     try {
+//         event = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`).then(res => res.json());
+//     } catch (error) {
+//         event = {}
+//     }
 
-    return {
-        props: {
-            event
-        }
-    }
-}
+//     return {
+//         props: {
+//             event
+//         }
+//     }
+// }
 
 export default Event;
