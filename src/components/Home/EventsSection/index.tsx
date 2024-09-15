@@ -7,6 +7,7 @@ import { Event } from "@/pages/api/getAllNextEvents";
 
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
+import Image from "next/image";
 
 interface props {
   eventsList: Event[]
@@ -83,7 +84,7 @@ const EventsSection = ({eventsList}: props) => {
             </ul>
 
             <div className={styles.eventImage}>
-              <img src={eventImage} alt="Imagem do Evento" />
+              <Image width={800} height={800} src={eventImage} alt="Imagem do Evento"></Image>
             </div>
           </div>
         </div>

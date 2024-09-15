@@ -44,7 +44,7 @@ const ContactSection = () => {
                             <textarea name="message" id="message" placeholder="Mensagem" className={styles.formInput} ></textarea>
 
                             <div className={styles.submitDiv}>
-                                <p className={styles.submitWarning}>Ao clicar no botão "Enviar" você concorda com as <a href="#">Políticas de Privacidade</a>.</p>
+                                <p className={styles.submitWarning}>Ao clicar no botão Enviar você concorda com as <a href="#">Políticas de Privacidade</a>.</p>
                                 <button type="submit" className={styles.formBtnSubmit}>Enviar</button>
                             </div>
                         </form>

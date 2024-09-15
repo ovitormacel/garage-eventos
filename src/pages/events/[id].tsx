@@ -46,9 +46,7 @@ const Event: NextPage = ({event}) => {
 
         let newValue = finishValue + value;
         setFinishValue(newValue);
-
         
-
     }
 
     const removeTicket = (value, ticket) => {
@@ -166,7 +164,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     let event;
   
     try {
-        event = await fetch(`http://localhost:3000/api/events/${id}`).then(res => res.json());
+        event = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`).then(res => res.json());
     } catch (error) {
         event = {}
     }

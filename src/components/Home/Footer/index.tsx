@@ -14,10 +14,10 @@ const Footer = () => {
                         </div>
                         
                         <ul className={styles.navFooter}>
-                            <li><Link href="http://localhost:3000/#home">Início</Link></li>
-                            <li><Link href="http://localhost:3000/#events">Programação</Link></li>
-                            <li><Link href="http://localhost:3000/#about">Sobre a Casa</Link></li>
-                            <li><Link href="http://localhost:3000/#contact">Contato</Link></li>
+                            <li><Link href="#home">Início</Link></li>
+                            <li><Link href="#events">Programação</Link></li>
+                            <li><Link href="#about">Sobre a Casa</Link></li>
+                            <li><Link href="#contact">Contato</Link></li>
                         </ul>
                     </div>
 

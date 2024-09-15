@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 
 import { FaInstagram, FaSpotify } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
         <>
             <header className={`${styles.header} ${scrollPosition >= 615 ? styles.active : ""}`}>
                 <div className={`container ${styles.containerHeader}`}>
-                     <Link href="/"><img src="/next.svg" alt="Logotipo Garage" className={styles.logotipo}/></Link>
+                     <Link href="/"><Image width={538} height={131} src="/next.svg" alt="Logotipo Garage" className={styles.logotipo}/></Link>
                      <nav className={`${styles.navbar} ${menuOpen ? styles.active : ""}`}>
                         <Link href="/#home" className={styles.navItem}>Inicio</Link>
                         <Link href="/#events" className={styles.navItem}>Programação</Link>
