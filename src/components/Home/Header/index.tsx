@@ -23,7 +23,6 @@ const Header = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        console.log(position)
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
