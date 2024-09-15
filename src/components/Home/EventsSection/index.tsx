@@ -3,17 +3,12 @@ import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import EventsCard from "@/components/common/EventCard";
-import { Event } from "@/pages/api/getAllNextEvents";
 
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import Image from "next/image";
 
-interface props {
-  eventsList: Event[]
-}
-
-const EventsSection = ({eventsList}: props) => {
+const EventsSection = ({eventsList}) => {
   const [eventImage, setEventImage] = useState(`/uploads/${eventsList[1].cover}.jpg`);
   
   const [pageActual, setPageActual] = useState(1);
