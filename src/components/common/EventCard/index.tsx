@@ -1,14 +1,9 @@
 import Link from "next/link"
 import styles from "./styles.module.scss";
-import { Event } from "@/pages/api/getAllNextEvents";
 import { FaEye } from "react-icons/fa6";
 
-interface props {
-    event: Event
-}
-
 const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-const EventsCard = ({event}: props) => {
+const EventsCard = ({event}) => {
     return (
         <li className={styles.eventCard}>
             <div className={styles.col1}>

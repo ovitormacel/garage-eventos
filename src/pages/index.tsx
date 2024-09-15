@@ -10,12 +10,8 @@ import MainSlider from "@/components/Home/MainSlider";
 import Timer from "@/components/Home/Timer";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { Event } from "./api/getAllNextEvents";
 import { allEvents } from "../events.js";
 
-interface props {
-  events: Event[]
-}
 
 const Home: NextPage = () => {
 
