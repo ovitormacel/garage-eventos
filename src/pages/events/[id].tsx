@@ -13,24 +13,20 @@ import { FaArrowRight, FaMinus, FaPlus } from "react-icons/fa6";
 import Footer from "@/components/Home/Footer";
 import { useEffect, useState } from "react";
 
+import { allEvents } from "@/events.js";
 
 const Event: NextPage = () => {
+    const [event, setEvent] = useState();
+    const {query} = useRouter();
 
-    let event = {
-        id: 5,
-        name: "CubaLibre",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        date: {
-            day: 20,
-            month: 6,
-            year: 2024,
-            hour: 21,
-            minutes: 0,
-        },
-        classification: 18,
-        ticketPrice: 119,
-        cover: "cubaLibre_back"
-    }
+    useEffect(() => {
+
+        let events = allEvents;
+
+
+        setEvent(events.find(ev => ev.id == query.id));
+    }, [event])
+
     
     const [ticketsMenu, setTicketsMenu] = useState(false);
 
@@ -94,7 +90,7 @@ const Event: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{event.name} - Garage Eventos</title>
+        <title>{event ? event.name : ""} - Garage Eventos</title>
         <meta name="description" content="A casa de show mais braba que você vai conhecer." />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
@@ -102,9 +98,11 @@ const Event: NextPage = () => {
       <main>
         <Header />
 
-        <div className={styles.mainBackground} style={{backgroundImage: `url("/uploads/${event.cover}.jpg")`}}></div>
+        {event ? (
+            <>
+                <div className={styles.mainBackground} style={{backgroundImage: `url("/uploads/${event.cover}.jpg")`}}></div>
 
-        <div className={`${styles.mainContent} container`}>
+                <div className={`${styles.mainContent} container`}>
                 <div className={styles.mainCover} style={{backgroundImage: `url("/uploads/${event.cover}.jpg")`}}></div>
 
                 <div className={styles.content}>
@@ -167,29 +165,13 @@ const Event: NextPage = () => {
                     <Link className={styles.buttonBuyTicket} href="#">Continuar <FaArrowRight /></Link>
                 </div>
             </div>
+            </>
+        ) : ""}
       </main>
 
       <Footer />
     </>
   )
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-    
-//     const {id} = context.query;
-//     let event;
-  
-//     try {
-//         event = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`).then(res => res.json());
-//     } catch (error) {
-//         event = {}
-//     }
-
-//     return {
-//         props: {
-//             event
-//         }
-//     }
-// }
 
 export default Event;
