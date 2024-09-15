@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { FaEye } from "react-icons/fa6";
 
 const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-const EventsCard = ({event}) => {
+const EventsCard = ({event}: any) => {
     return (
         <li className={styles.eventCard}>
             <div className={styles.col1}>

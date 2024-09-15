@@ -8,20 +8,20 @@ import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import Image from "next/image";
 
-const EventsSection = ({eventsList}) => {
+const EventsSection = ({eventsList}: any) => {
   const [eventImage, setEventImage] = useState(`/uploads/${eventsList[1].cover}.jpg`);
   
   const [pageActual, setPageActual] = useState(1);
   const [totalPage, setTotalPage] = useState(Math.ceil(eventsList.length / 3));
 
-  const [paginatedList, setPaginatedList] = useState<Event[]>([]);
+  const [paginatedList, setPaginatedList] = useState<any[]>([]);
 
 
   const paginateList = (page: number) => {
     if(eventsList && pageActual <= totalPage && pageActual >= 0) {
       let count = (page * 3) - 3;
       let delimiter = count + 3;
-      let result: Event[] = [];
+      let result: any[] = [];
 
       for(let i = count; i < delimiter; i++){
         if(eventsList[i] != null) {
@@ -70,7 +70,7 @@ const EventsSection = ({eventsList}) => {
           <div className={styles.events}>
 
             <ul className={styles.listEvents}>
-              {paginatedList ? paginatedList.map((eventInfos: Event) => (
+              {paginatedList ? paginatedList.map((eventInfos: any) => (
                 <div onMouseEnter={() => {changeEventImage(eventInfos.cover)}} key={eventInfos.id}>
                   <EventsCard event={eventInfos}/>
                 </div>
