@@ -46,6 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
     events = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/getAllNextEvents").then(res => res.json());
   } catch (error) {
     events = {}
+    throw new Error("Nenhum dado recuperado")
   }
 
   return {
